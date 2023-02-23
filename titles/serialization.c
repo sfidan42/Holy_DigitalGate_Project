@@ -24,7 +24,7 @@ void	ft_receive_buffer(char *buffer)
 int	main(void)
 {
 	Crash	crash;
-	char	buffer;
+	char	*buffer;
 	
 	crash.Code = 10054;
 	crash.Reason = "An existing connection was forcibly closed by the remote host";
