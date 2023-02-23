@@ -6,8 +6,11 @@
 # include <readline/readline.h>
 # include "utils_help/utils_help.h"
 
-void	ft_putchar(int c);
-void	ft_putstr(char *s);
-void	ft_putnbr(int n);
+extern int			counter;
+extern pthread_t	thread1;
+extern pthread_t	thread2;
+
+void	*ft_first_thread(void *param);
+void	*ft_second_thread(void *param);
 
 #endif
