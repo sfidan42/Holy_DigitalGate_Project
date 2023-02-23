@@ -1,16 +1,10 @@
 #ifndef UTILS_H
 # define UTILS_H
-# include <pthread.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <readline/readline.h>
-# include "utils_help/utils_help.h"
+# include "unistd.h"
 
-extern int			counter;
-extern pthread_t	thread1;
-extern pthread_t	thread2;
-
-void	*ft_first_thread(void *param);
-void	*ft_second_thread(void *param);
+int 	ft_atoi(const char *str);
+void	ft_putchar(int c);
+void    ft_putnbr(int n);
+void	ft_putstr(char *s);
 
 #endif

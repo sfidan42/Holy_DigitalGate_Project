@@ -10,9 +10,11 @@ $(NAME):
 	ar rcs $(NAME) $(OBJ)
 
 digital_gate: digital_gate.c
+	make -C titles
 	gcc $(CFLAGS) digital_gate.c $(NAME) $(LIBLAGS) -o digital_gate
 
 clean:
+	@make -C titles clean
 	@make -C utils clean
 	rm -f $(OBJ)
 
@@ -21,4 +23,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all set_main clean fclean re
+.PHONY: all titles clean fclean re

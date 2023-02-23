@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "utils_help.h": "c"
+        "utils_help.h": "c",
+        "random": "c",
+        "utils.h": "c"
     }
 }
