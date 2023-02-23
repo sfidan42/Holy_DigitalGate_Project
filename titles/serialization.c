@@ -21,13 +21,22 @@ void	ft_receive_buffer(char *buffer)
 	free(buffer);
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	Crash	crash;
 	char	*buffer;
-	
-	crash.Code = 10054;
-	crash.Reason = "An existing connection was forcibly closed by the remote host";
+
+	if (ac != 4)
+	{
+		ft_putstr("\033[31mError! You should've entered: \n\033[32m");
+		ft_putstr("<cmd> <program_index> <code> <reason>\n\033[0m");
+		ft_putstr("\033[35mexample: \033[0m");
+		ft_putstr("./digital_gate 4 10054 ");
+		ft_putstr("\"An existing connection was forcibly closed by the remote host\"\n");
+		return (1);
+	}
+	crash.Code = ft_atoi(av[2]);
+	crash.Reason = av[3];
 	buffer = ft_send_buffer(crash);
 	ft_receive_buffer(buffer);
 	return (0);

@@ -33,8 +33,14 @@ void	*ft_second_thread(void *param)
 	return (0);
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
+	if (ac != 2)
+	{
+		ft_putstr("\033[31mError! Only 1 argument!\n\033[0m");
+		return (1);
+	}
+	(void)av;
 	counter = 0;
 	pthread_create(&thread1, NULL, ft_first_thread, NULL);
 	pthread_create(&thread2, NULL, ft_second_thread, NULL);

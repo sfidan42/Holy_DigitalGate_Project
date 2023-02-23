@@ -13,11 +13,22 @@ unsigned long	Next()
 	return (idx++);
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	int	iteration;
 
-	iteration = 15;
+	if (ac != 3)
+	{
+		ft_putstr("\033[31mError! You should've entered: \n\033[32m");
+		ft_putstr("<cmd> <program_index> <iteration_count>\n\033[0m");
+		return (1);
+	}
+	iteration = ft_atoi(av[2]);
+	if (!iteration)
+	{
+		ft_putstr("\033[31mError! You should've used a number for iteration number!\n\033[0m");
+		return (1);
+	} 
 	while (iteration--)
 	{
 		ft_putnbr(Next());

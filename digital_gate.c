@@ -3,29 +3,26 @@
 int	main(int ac, char **av)
 {
 	int		idx;
-	char	**xcve;
-	
-	if (ac != 2)
+
+	if (ac == 1)
 	{
-		ft_putstr("\033[31mError! You should've entered: ");
-		ft_putstr("\033[32m<cmd> <program_index>\n\033[0m");
+		ft_putstr("\033[31mError! At least 1 arg is required!\n\033[0m");
 		return (1);
 	}
-	xcve = NULL;
 	idx = ft_atoi(av[1]);
 	if (idx == 1)
-		execve("titles/posix_threading", xcve, NULL);
-	else if (idx == 2)
-		execve("titles/posix_signals", xcve, NULL);
-	else if (idx == 3)
-		execve("titles/posix_socket", xcve, NULL);
-	else if (idx == 4)
-		execve("titles/serialization", xcve, NULL);
-	else if (idx == 5)
-		execve("titles/state_machines", xcve, NULL);
+		return (execve("titles/posix_threading", av, NULL));
+	if (idx == 2)
+		return (execve("titles/posix_signals", av, NULL));
+	if (idx == 3)
+		return (execve("titles/posix_socket", av, NULL));
+	if (idx == 4)
+		return (execve("titles/serialization", av, NULL));
+	if (idx == 5)
+		return (execve("titles/state_machines", av, NULL));
 	else
 	{
-		ft_putstr("wrong program_index!\n");
+		ft_putstr("\033[31mError! Wrong program index!\n\033[0m");
 		return (1);
 	}
 	return(0);
