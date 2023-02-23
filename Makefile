@@ -1,7 +1,6 @@
 SRC		=	$(shell ls -t utils/*.c utils/utils_help/*.c)
 OBJ		=	$(SRC:.c=.o)
 CFLAGS	=	-Wall -Wextra -Werror
-LIBLAGS	=	-lpthread -lreadline
 NAME	=	digital_gate.a
 
 all: $(NAME) digital_gate
@@ -22,4 +21,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all set_main clean fclean re

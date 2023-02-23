@@ -1,7 +1,5 @@
 #include "utils.h"
 
-extern int	counter;
-
 void	*ft_first_thread(void *param)
 {
 	(void)param;
