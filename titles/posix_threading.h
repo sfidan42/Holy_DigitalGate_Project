@@ -5,6 +5,4 @@
 # include <readline/readline.h>
 # include "../utils/utils.h"
 
-void	*ft_first_thread(void *param);
-void	*ft_second_thread(void *param);
 #endif
