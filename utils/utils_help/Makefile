@@ -3,9 +3,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 LIBLAGS	=	-lpthread
 
 all:
-	make -C utils_help
 	gcc -c $(CFLAGS) $(SRC) $(LIBLAGS)
 
 clean:
-	make -C utils_help clean
 	rm -f $(SRC:.c=.o)

@@ -1,17 +1,4 @@
-#include "utils.h"
-
-void	ft_putchar(int c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *s)
-{
-	if (!*s)
-		return ;
-	write(1, s, 1);
-	ft_putstr(s + 1);
-}
+# include "utils_help.h"
 
 void    ft_putnbr(int n)
 {

@@ -8,7 +8,7 @@ typedef struct
 	char	*Reason;
 }			Crash;
 
-void	ft_first_thread();
-void	ft_second_thread();
+void	*ft_first_thread(void *param);
+void	*ft_second_thread(void *param);
 
 #endif

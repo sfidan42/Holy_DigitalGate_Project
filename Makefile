@@ -1,10 +1,10 @@
-SRC		=	$(shell ls -t utils/*.c)
+SRC		=	$(shell ls -t utils/*.c utils/utils_help/*.c)
 OBJ		=	$(SRC:.c=.o)
 CFLAGS	=	-Wall -Wextra -Werror
-LIBLAGS	=	-lpthread
+LIBLAGS	=	-lpthread -lreadline
 NAME	=	digital_gate.a
 
-all: $(NAME)
+all: $(NAME) digital_gate
 
 $(NAME):
 	make -C utils
