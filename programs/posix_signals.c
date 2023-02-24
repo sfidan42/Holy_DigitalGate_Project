@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 	(void)av;
 	ft_putstr("Please, press Ctrl+c to see elapsed time.\n");
 	signal(SIGINT, ft_signal_handler);
-	counter = 0;
+	g_counter = 0;
 	while (1)
 	{
 		sleep(1);

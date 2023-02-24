@@ -11,6 +11,9 @@ unsigned long	Next()
 {
 	static int	idx;
 
+	ft_putstr("\033[0;33m");
+	ft_putnbr(idx);
+	ft_putstr(".\033[0m");
 	return (ft_fib(idx++));
 }
 

@@ -30,7 +30,7 @@ int	main(int ac, char **av)
 	{
 		ft_putstr("\033[31mError! You should've entered: \n\033[32m");
 		ft_putstr("<cmd> <program_index> <code> <reason>\n\033[0m");
-		ft_putstr("\033[35mexample: \033[0m./digital_gate 4 10054 ");
+		ft_putstr("\033[35mexample: \033[0m./digital_gate 5 10054 ");
 		ft_putstr("\"An existing connection was forcibly");
 		ft_putstr(" closed by the remote host\"\n");
 		return (EXIT_FAILURE);

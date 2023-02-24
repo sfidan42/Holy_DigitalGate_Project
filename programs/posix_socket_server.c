@@ -5,12 +5,12 @@ int	main(void)
 	int					rc;
 	int					n;
 	int					sockfd;
-	char				buffer[50];
 	socklen_t			len;
-	struct sockaddr_in	servaddr;
+	char				buffer[50] = {0};
+	struct sockaddr_in	servaddr = {0};
 
-	buffer = {0};
-	servaddr = {0};
+	ft_putstr("server is started.\n");
+	ft_putstr("Please type \"./digital_gate 4\" in another terminal.\n");
 	sockfd = socket(AF_INET, SOCK_DGRAM, 0);
 	if (sockfd == -1)
 	{
@@ -30,7 +30,7 @@ int	main(void)
 	len = 0;
 	n = recvfrom(sockfd, (char *)buffer, 50, MSG_WAITALL, 0, &len);
 	buffer[n] = '\n';
-	ft_putstr("server: ");
+	ft_putstr("server: the message -> ");
 	ft_putstr(buffer);
 	close(sockfd);
 	return (EXIT_SUCCESS);

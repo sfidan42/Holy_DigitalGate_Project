@@ -5,9 +5,8 @@ int	main(void)
 	int					len;
 	int					sockfd;
 	char				*message;
-	struct sockaddr_in	servaddr;
+	struct sockaddr_in	servaddr = {0};
 
-	servaddr = {0};
 	message = "hello from client";
 	sockfd = socket(AF_INET, SOCK_DGRAM, 0);
 	if (sockfd == -1)
@@ -18,6 +17,7 @@ int	main(void)
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_port = htons(12345);
 	servaddr.sin_addr.s_addr = INADDR_ANY;
+	ft_putstr("client: sending message\n");
 	len = sendto(sockfd, (const char *)message, ft_strlen(message),
 			0, (const struct sockaddr *)&servaddr, sizeof(servaddr));
 	if (len == -1)
