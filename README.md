@@ -97,7 +97,7 @@ void	ft_signal_handler(int signal)
 - Explain how you tested your app.
     - I tested it by having two main functions, one for client and the other for server. Then, I used send
 
-[an image](images/UDP_IP.png)
+![an image](images/UDP_IP.png)
 
 Server side consists of four steps:
 1. Creating socket,
