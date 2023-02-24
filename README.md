@@ -23,6 +23,29 @@ make clean
     - The other thread should:
         - Sleep for a random interval between 1 to 1000 milliseconds
         - Read an integer value from the stdin, and store it in the global counter
+- I basically open a loop for both threads.
+
+For the first thread, the loop only prints and incremenets the number as wanted.
+```
+while (1)
+{
+    ft_putnbr(g_counter++);
+    ft_putchar('\n');
+    usleep(10000);
+}
+```
+The second cancels the first at first and takes input by asking some prompt and then starts the second thread again:
+```
+while (1)
+{
+    usleep(100000);
+    pthread_cancel(g_thread1); // cancel the first thread
+    line = readline("Input \"counter\": ");
+    g_counter = ft_atoi(line);
+    free(line);
+    pthread_create(&g_thread1, NULL, ft_first_thread, NULL); // start the first thread
+}
+```
 
 ##### When working with threads in this section
 - There were two threads running simultaneously. When the second thread prompted for an input by displaying the message ```Input "counter":```, however, before I could input anything, the first thread printed the counter on the terminal, which resulted in me being unable to provide the desired input.
@@ -45,6 +68,7 @@ When Ctrl + c is pressed in the terminal, the number of seconds elapsed shall be
 - I just handled the SIGINT signal using ```sighandler_t signal(int signum, sighandler_t handler);``` function as assigning```signum = SIGINT```.
 The main part that increases the counter every second, so that, it follows the time.
 ```
+signal(SIGINT, ft_signal_handler); // start listening to SIGINT signal
 while (1)
 {
     sleep(1);
