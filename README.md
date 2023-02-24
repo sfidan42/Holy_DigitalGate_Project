@@ -1,5 +1,7 @@
 - This is my test for DigitalGate AMG
 
+![an image](images/digital_gate_tree.png)
+
 ## Compile the project
 ```
 make
