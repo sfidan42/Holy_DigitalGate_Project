@@ -26,6 +26,7 @@ make clean
 
 When working with threads in this section
 - There were two threads running simultaneously. When the second thread prompted for an input by displaying the message ```Input "counter":```, however, before I could input anything, the first thread printed the counter on the terminal, which resulted in me being unable to provide the desired input.
+(I just let the second thread cancel first one till I input)
 
 #### run with
 ```
@@ -34,6 +35,12 @@ When working with threads in this section
 ![an image](images/digital_gate_1.png)
 
 ## POSIX Signals
+
+- Write a simple program that:
+    - Sleeps for 1 second
+    - Increments an integer counter
+When Ctrl + c is pressed in the terminal, the number of seconds elapsed shall be printed and the program must continue counting without exiting.
+
 ```
 ./digital_gate 2
 ```
