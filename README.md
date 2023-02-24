@@ -72,7 +72,8 @@ A such C struct was given and I copied its content into ```char *buffer``` using
 
 Description was:
 - We need to send this data to another application with UDP sockets.
-- Convert this object to a buffer that can be sent via UDP socket. NOTE: There is no need to actually send the data, the objective is to just construct the buffer so that it can be sent over the network.
+- Convert this object to a buffer that can be sent via UDP socket. 
+NOTE: There is no need to actually send the data, the objective is to just construct the buffer so that it can be sent over the network.
 
 ```
 ./digital_gate 5 12345 package_1
