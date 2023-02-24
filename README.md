@@ -93,6 +93,29 @@ void	ft_signal_handler(int signal)
 ## POSIX Socket
 - Write a simple program that: - Listens to incoming UDP packets and prints them along with their originating IP address
 - Explain how you tested your app.
+
+Client side consists of three steps:
+1. Creating socket,
+2. Setup of port,adress,...
+3. Sending the signal
+```
+message = "hello from client";
+sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+if (sockfd == -1)
+{
+    perror("client: failed to create socket");
+    exit(EXIT_FAILURE);
+}
+servaddr.sin_family = AF_INET; // Setting the address family to IPv4
+servaddr.sin_port = htons(12345); // Destination port
+servaddr.sin_addr.s_addr = INADDR_ANY; // Destionation IP Adress (_ANY is for any avaliable)
+ft_putstr("client: sending message\n"); 
+len = sendto(sockfd, (const char *)message, ft_strlen(message),
+        0, (const struct sockaddr *)&servaddr, sizeof(servaddr)); // sending the message
+if (len == -1)
+    perror("client: failed to send");
+close(sockfd);
+```
 ```
 ./digital_gate 3
 ```
