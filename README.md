@@ -62,7 +62,15 @@ When Ctrl + c is pressed in the terminal, the number of seconds elapsed shall be
 
 ## Serialization
 ```
-./digital_gate 5 192.168.1.100 package_1
+typedef struct
+{
+    int Code;
+    char * Reason;
+} Crash;
+```
+A such C struct was given and I copied its content into ```char *buffer``` using C ``` void *memcpy(void *dest, const void *src, size_t n);``` function.
+```
+./digital_gate 5 12345 package_1
 ```
 ![an image](images/digital_gate_5.png)
 
