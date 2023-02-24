@@ -39,6 +39,7 @@ make clean
 - Write a simple program that:
     - Sleeps for 1 second
     - Increments an integer counter
+
 When Ctrl + c is pressed in the terminal, the number of seconds elapsed shall be printed and the program must continue counting without exiting.
 
 ```
