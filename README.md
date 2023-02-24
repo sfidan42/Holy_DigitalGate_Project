@@ -15,7 +15,7 @@ make clean
 
 ## POSIX Threading
 
-Consist of two different threads
+- Consist of two different threads
     - Consist of a global integer counter.
     - One thread should enter the following loop:
         - Sleep for a random interval between 1 to 1000 milliseconds
