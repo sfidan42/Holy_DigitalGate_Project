@@ -25,7 +25,7 @@ make clean
         - Read an integer value from the stdin, and store it in the global counter
 
 When working with threads in this section
-- The second thread wrote Input "counter":
+- There were two threads running simultaneously. When the second thread prompted for an input by displaying the message ```Input "counter":```, however, before I could input anything, the first thread printed the counter on the terminal, which resulted in me being unable to provide the desired input.
 
 #### run with
 ```
