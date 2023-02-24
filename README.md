@@ -24,7 +24,7 @@ make clean
         - Sleep for a random interval between 1 to 1000 milliseconds
         - Read an integer value from the stdin, and store it in the global counter
 
-When working with threads in this section
+##### When working with threads in this section
 - There were two threads running simultaneously. When the second thread prompted for an input by displaying the message ```Input "counter":```, however, before I could input anything, the first thread printed the counter on the terminal, which resulted in me being unable to provide the desired input.
 (I just let the second thread cancel first one till I input)
 
