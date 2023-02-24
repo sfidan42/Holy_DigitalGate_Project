@@ -62,7 +62,7 @@ When Ctrl + c is pressed in the terminal, the number of seconds elapsed shall be
 
 ## Serialization
 ```
-./digital_gate 5 12321399213
+./digital_gate 5 192.168.1.100 package_1
 ```
 ![an image](images/digital_gate_5.png)
 
