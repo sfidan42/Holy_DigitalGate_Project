@@ -70,17 +70,19 @@ typedef struct
 ```
 such a C struct was given and I copied its content into ```char *buffer``` using C ``` void *memcpy(void *dest, const void *src, size_t n);``` function.
 ```
-char	*buffer;
-Crash	crash;
+#define BUFFER_SIZE sizeof(Crash)
 
-buffer = malloc(BUFFER_SIZE);
-ft_memcpy(buffer, &crash, sizeof(crash));
-crash = *(Crash *)buffer;
-ft_putstr(crash.Reason);
+char	*buffer; // The data form that will be sent
+Crash	crash; // The data form we can use
+
+buffer = malloc(BUFFER_SIZE); // first, allocate enough space before copying
+ft_memcpy(buffer, &crash, sizeof(crash)); // second, copy the content
+crash = *(Crash *)buffer; // third, here we have the bake out of buffer
+ft_putstr(crash.Reason); 
 ft_putchar('\n');
 ft_putnbr(crash.Code);
 ft_putchar('\n');
-free(buffer);
+free(buffer); // every enemy might deserve freedom
 ```
 Description was:
 - We need to send this data to another application with UDP sockets.
@@ -101,9 +103,9 @@ For this, I coded a recursive fibonacci function such
 ```
 unsigned long	ft_fib(unsigned long n)
 {
-	if (n < 2)
-		return (n);
-	return (ft_fib(n - 1) + ft_fib(n - 2));
+	if (n < 2) // first two elements are 0 1
+		return (n); // n is the same as 0 1
+	return (ft_fib(n - 1) + ft_fib(n - 2)); // just the fibonacci here
 }
 ```
 To let it bring new entry in the sequence, I just used a static index variable ```static int    idx;```, so that, each time when I call my function, I increase the idx value and function saves it. 
