@@ -7,10 +7,11 @@ void	*ft_posix_socket_driver(void *pos_soc)
 	ps = *(t_posix_socket *)pos_soc;
 	ft_putstr(ps.name);
 	ft_putchar('\n');
+	execve(ps.name, ps.av, NULL);
 	return (0);
 }
 
-void	ft_posix_socket(void)
+void	ft_posix_socket(char **av)
 {
 	pthread_t		thread1;
 	pthread_t		thread2;
@@ -19,6 +20,8 @@ void	ft_posix_socket(void)
 
 	ps1.name = "tiltes/posix_socket_server";
 	ps2.name = "tiltes/posix_socket_client";
+	ps1.av = av;
+	ps2.av = av;
 	pthread_create(&thread1, NULL, ft_posix_socket_driver, &ps1);
 	sleep(1);
 	pthread_create(&thread2, NULL, ft_posix_socket_driver, &ps2);
@@ -42,7 +45,7 @@ int	main(int ac, char **av)
 		return (execve("titles/posix_signals", av, NULL));
 	if (idx == 3)
 	{
-		ft_posix_socket();
+		ft_posix_socket(av);
 		return (EXIT_SUCCESS);
 	}
 	if (idx == 4)

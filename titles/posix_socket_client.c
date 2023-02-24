@@ -1,9 +1,7 @@
 #include "posix_socket.h"
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	(void)ac;
-	(void)av;
 	char				*msg; (void)msg;
 	int					sockfd;
 	struct sockaddr_in	servaddr; (void)servaddr;
