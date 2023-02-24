@@ -1,15 +1,15 @@
 #include "posix_threading.h"
 
-int				counter;
-pthread_t		thread1;
-pthread_t		thread2;
+int				g_counter;
+pthread_t		g_thread1;
+pthread_t		g_thread2;
 
 void	*ft_first_thread(void *param)
 {
 	(void)param;
 	while (1)
 	{
-		ft_putnbr(counter++);
+		ft_putnbr(g_counter++);
 		ft_putchar('\n');
 		usleep(10000);
 	}
@@ -24,11 +24,11 @@ void	*ft_second_thread(void *param)
 	while (1)
 	{
 		usleep(300000);
-		pthread_cancel(thread1);
+		pthread_cancel(g_thread1);
 		line = readline("Input \"counter\": ");
-		counter = ft_atoi(line);
+		g_counter = ft_atoi(line);
 		free(line);
-		pthread_create(&thread1, NULL, ft_first_thread, NULL);
+		pthread_create(&g_thread1, NULL, ft_first_thread, NULL);
 	}
 	return (0);
 }
@@ -41,15 +41,15 @@ int	main(int ac, char **av)
 		return (EXIT_FAILURE);
 	}
 	(void)av;
-	counter = 0;
-	pthread_create(&thread1, NULL, ft_first_thread, NULL);
-	pthread_create(&thread2, NULL, ft_second_thread, NULL);
-	while (counter >= 0)
+	g_counter = 0;
+	pthread_create(&g_thread1, NULL, ft_first_thread, NULL);
+	pthread_create(&g_thread2, NULL, ft_second_thread, NULL);
+	while (g_counter >= 0)
 		usleep(5000);
-	pthread_cancel(thread1);
-	pthread_cancel(thread2);
+	pthread_cancel(g_thread1);
+	pthread_cancel(g_thread2);
 	write(1, "\033[31mprogram stopped with counter: \033[0m", 31);
-	ft_putnbr(counter - 1);
+	ft_putnbr(g_counter - 1);
 	ft_putchar('\n');
 	return (0);
 }

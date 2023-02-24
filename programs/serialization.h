@@ -5,10 +5,10 @@
 
 typedef struct
 {
-    int     Code;
-    char    *Reason;
-}           Crash;
+	int		Code;
+	char	*Reason;
+}			Crash;
 
-#define BUFFER_SIZE sizeof(Crash)
+# define BUFFER_SIZE sizeof(Crash)
 
 #endif

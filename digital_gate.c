@@ -27,5 +27,5 @@ int	main(int ac, char **av)
 		ft_putstr("\033[31mError! Wrong program index!\n\033[0m");
 		return (EXIT_FAILURE);
 	}
-	return(EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }

@@ -3,4 +3,6 @@
 # include <signal.h>
 # include "../utils/utils.h"
 
+int	g_counter;
+
 #endif

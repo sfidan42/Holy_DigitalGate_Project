@@ -4,13 +4,14 @@ unsigned long	ft_fib(unsigned long n)
 {
 	if (n < 2)
 		return (n);
-	return(ft_fib(n - 1) + ft_fib(n - 2));
+	return (ft_fib(n - 1) + ft_fib(n - 2));
 }
 
 unsigned long	Next()
 {
 	static int	idx;
-	return (idx++);
+
+	return (ft_fib(idx++));
 }
 
 int	main(int ac, char **av)
@@ -26,9 +27,10 @@ int	main(int ac, char **av)
 	iteration = ft_atoi(av[2]);
 	if (!iteration)
 	{
-		ft_putstr("\033[31mError! You should've used a number for iteration number!\n\033[0m");
+		ft_putstr("\033[31mError! You should've used ");
+		ft_putstr("a number for iteration number!\n\033[0m");
 		return (1);
-	} 
+	}
 	while (iteration--)
 	{
 		ft_putnbr(Next());
