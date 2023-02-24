@@ -68,8 +68,20 @@ typedef struct
     char * Reason;
 } Crash;
 ```
-A such C struct was given and I copied its content into ```char *buffer``` using C ``` void *memcpy(void *dest, const void *src, size_t n);``` function.
+such a C struct was given and I copied its content into ```char *buffer``` using C ``` void *memcpy(void *dest, const void *src, size_t n);``` function.
+```
+char	*buffer;
+Crash	crash;
 
+buffer = malloc(BUFFER_SIZE);
+ft_memcpy(buffer, &crash, sizeof(crash));
+crash = *(Crash *)buffer;
+ft_putstr(crash.Reason);
+ft_putchar('\n');
+ft_putnbr(crash.Code);
+ft_putchar('\n');
+free(buffer);
+```
 Description was:
 - We need to send this data to another application with UDP sockets.
 - Convert this object to a buffer that can be sent via UDP socket. 
