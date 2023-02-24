@@ -2,5 +2,6 @@
 
 int	main(void)
 {
+	printf("server\n");
 	return (EXIT_SUCCESS);
 }

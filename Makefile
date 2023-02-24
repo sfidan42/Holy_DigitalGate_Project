@@ -1,4 +1,4 @@
-SRC		=	$(shell ls -t utils/*.c utils/utils_help/*.c)
+SRC		=	$(shell ls -t utils/*.c)
 OBJ		=	$(SRC:.c=.o)
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	digital_gate.a
@@ -18,7 +18,7 @@ clean:
 	@make -C utils clean
 	rm -f $(OBJ)
 
-fclean: clean 
+fclean: clean
 	rm -f $(NAME) digital_gate
 
 re: fclean all
