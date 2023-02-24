@@ -38,7 +38,7 @@ int	main(int ac, char **av)
 	if (ac != 2)
 	{
 		ft_putstr("\033[31mError! Only 1 argument!\n\033[0m");
-		return (1);
+		return (EXIT_FAILURE);
 	}
 	(void)av;
 	counter = 0;

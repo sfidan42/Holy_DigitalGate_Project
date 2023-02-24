@@ -7,7 +7,7 @@ int	main(int ac, char **av)
 	if (ac == 1)
 	{
 		ft_putstr("\033[31mError! At least 1 arg is required!\n\033[0m");
-		return (1);
+		return (EXIT_FAILURE);
 	}
 	idx = ft_atoi(av[1]);
 	if (idx == 1)
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	else
 	{
 		ft_putstr("\033[31mError! Wrong program index!\n\033[0m");
-		return (1);
+		return (EXIT_FAILURE);
 	}
-	return(0);
+	return(EXIT_SUCCESS);
 }

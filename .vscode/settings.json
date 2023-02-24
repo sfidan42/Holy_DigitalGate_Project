@@ -2,6 +2,7 @@
     "files.associations": {
         "utils_help.h": "c",
         "random": "c",
-        "utils.h": "c"
+        "utils.h": "c",
+        "cstdlib": "c"
     }
 }

@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	{
 		ft_putstr("\033[31mError! You should've entered: \n\033[32m");
 		ft_putstr("<cmd> <program_index> <iteration_count>\n\033[0m");
-		return (1);
+		return (EXIT_FAILURE);
 	}
 	iteration = ft_atoi(av[2]);
 	if (!iteration)

@@ -15,7 +15,7 @@ int	main(int ac, char **av)
 	if (ac != 2)
 	{
 		ft_putstr("\033[31mError! Only 1 argument!\n");
-		return (1);
+		return (EXIT_FAILURE);
 	}
 	(void)av;
 	ft_putstr("Please, press Ctrl+c to see elapsed time.\n");

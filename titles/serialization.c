@@ -33,7 +33,7 @@ int	main(int ac, char **av)
 		ft_putstr("\033[35mexample: \033[0m");
 		ft_putstr("./digital_gate 4 10054 ");
 		ft_putstr("\"An existing connection was forcibly closed by the remote host\"\n");
-		return (1);
+		return (EXIT_FAILURE);
 	}
 	crash.Code = ft_atoi(av[2]);
 	crash.Reason = av[3];
