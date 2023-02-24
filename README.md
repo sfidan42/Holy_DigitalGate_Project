@@ -69,7 +69,6 @@ typedef struct
 } Crash;
 ```
 A such C struct was given and I copied its content into ```char *buffer``` using C ``` void *memcpy(void *dest, const void *src, size_t n);``` function.
-```
 
 Description was:
 - We need to send this data to another application with UDP sockets.
