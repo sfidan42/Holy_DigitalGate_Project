@@ -25,7 +25,7 @@ make clean
         - Read an integer value from the stdin, and store it in the global counter
 
 When working with threads in this section
-- The second thread wrote "Input \"counter\":"
+- The second thread wrote Input "counter":
 
 #### run with
 ```
