@@ -23,7 +23,7 @@ void	*ft_second_thread(void *param)
 	(void)param;
 	while (1)
 	{
-		usleep(300000);
+		usleep(100000);
 		pthread_cancel(g_thread1);
 		line = readline("Input \"counter\": ");
 		g_counter = ft_atoi(line);
