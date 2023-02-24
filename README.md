@@ -43,7 +43,24 @@ make clean
 When Ctrl + c is pressed in the terminal, the number of seconds elapsed shall be printed and the program must continue counting without exiting.
 
 - I just handled the SIGINT signal using ```sighandler_t signal(int signum, sighandler_t handler);``` function as assigning```signum = SIGINT```.
-
+The main part that increases the counter every second, so that, it follows the time.
+```
+while (1)
+{
+    sleep(1);
+    g_counter++; // g_ prefix stands for "global"
+}
+```
+With my function for signal handling I just printed the elapsed secons.
+```
+void	ft_signal_handler(int signal)
+{
+	(void)signal;
+	ft_putstr("\n\033[34m# of times elapsed in seconds: \033[0m");
+	ft_putnbr(g_counter);
+	ft_putchar('\n');
+}
+```
 ```
 ./digital_gate 2
 ```
