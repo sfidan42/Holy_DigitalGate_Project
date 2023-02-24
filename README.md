@@ -42,6 +42,8 @@ make clean
 
 When Ctrl + c is pressed in the terminal, the number of seconds elapsed shall be printed and the program must continue counting without exiting.
 
+- I just handled the SIGINT signal using ```sighandler_t signal(int signum, sighandler_t handler);``` function.
+
 ```
 ./digital_gate 2
 ```
