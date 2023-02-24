@@ -93,11 +93,13 @@ void	ft_signal_handler(int signal)
 ## POSIX Socket
 - Write a simple program that: - Listens to incoming UDP packets and prints them along with their originating IP address
 - Explain how you tested your app.
+    - I tested it by having two main functions, one for client and the other for server. Then, I used send
 
-Server side consists of three steps:
+Server side consists of four steps:
 1. Creating socket,
-2. Setup of port,adress,...
-3. Waiting the signal
+2. Setup of port,adress,... 
+3. Binding the socket to the specified address and port number
+4. Waiting the signal
 ```
 ft_putstr("server is started.\n");
 ft_putstr("Please type \"./digital_gate 4\" in another terminal.\n");
@@ -110,7 +112,7 @@ if (sockfd == -1)
 servaddr.sin_family = AF_INET; // Setting the address family to IPv4
 servaddr.sin_port = htons(12345); // Destionation Port
 servaddr.sin_addr.s_addr = INADDR_ANY; // Destionation IP Adress (_ANY is for any avaliable)
-rc = bind(sockfd, (const struct sockaddr *)&servaddr, sizeof(servaddr));
+rc = bind(sockfd, (const struct sockaddr *)&servaddr, sizeof(servaddr)); // 
 if (rc == -1)
 {
     perror("server: failed to bind");
