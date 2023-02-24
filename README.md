@@ -1,4 +1,4 @@
-### This is my test for DigitalGate AMG
+- This is my test for DigitalGate AMG
 
 ## Compile the project
 ```
@@ -6,6 +6,12 @@ make
 make clean
 ```
 
+## Run the project
+```
+./digital_gate [program index] [second argument] [third argument]
+```
+- Note: depending on the program index value, necessary arguments are different.
+- If no necessity, my codes doesn't allow .
 ## POSIX Threading
 ```
 ./digital_gate 1
