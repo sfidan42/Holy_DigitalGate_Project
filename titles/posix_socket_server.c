@@ -2,34 +2,34 @@
 
 int	main(void)
 {
-	char				*buffer;
-	int					sockfd;
 	int					rc;
-	int					n;
-	t_message			msg;
+	int 				n;
+	int					sockfd;
+	char				buffer[50] = {0};
 	socklen_t			len;
-	struct sockaddr_in	servaddr;
+	struct sockaddr_in	servaddr = {0};
 	
 	sockfd = socket(AF_INET, SOCK_DGRAM, 0);
-	if (sockfd == -1)
+	if(sockfd == -1)
 	{
-		perror("failed to create socket");
-		return (EXIT_FAILURE);
+		perror("server: failed to create socket");
+		exit(EXIT_FAILURE);
 	}
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_port = htons(12345);
 	servaddr.sin_addr.s_addr = INADDR_ANY;
-	rc = bind(sockfd, (const struct sockaddr *)&servaddr, sizeof(servaddr))
-	if (rc == -1)
+	rc = bind(sockfd, (const struct sockaddr *)&servaddr, sizeof(servaddr));	
+	if(rc == -1)
 	{
-		perror("failed to bind");
+		perror("server: failed to bind");
 		close(sockfd);
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	len = 0;
-	n = recvfrom(sockfd, (char *)buffer, ft_strlen(), MSG_WAITALL, 0, &len);
+	n = recvfrom(sockfd, (char *)buffer, 50, MSG_WAITALL, 0, &len);
 	buffer[n] = '\n';
+	ft_putstr("server: ");
 	ft_putstr(buffer);
 	close(sockfd);
-	return (EXIT_SUCCESS);
+    return 0;
 }
