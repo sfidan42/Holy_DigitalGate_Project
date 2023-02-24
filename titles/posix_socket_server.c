@@ -27,8 +27,9 @@ int	main(void)
 		exit (EXIT_FAILURE);
 	}
 	len = 0;
-	
 	n = recvfrom(sockfd, (char *)buffer, ft_strlen(), MSG_WAITALL, 0, &len);
 	buffer[n] = '\n';
+	ft_putstr(buffer);
+	close(sockfd);
 	return (EXIT_SUCCESS);
 }
