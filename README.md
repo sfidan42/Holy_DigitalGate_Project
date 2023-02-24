@@ -52,6 +52,8 @@ When Ctrl + c is pressed in the terminal, the number of seconds elapsed shall be
 ## POSIX Socket
 ```
 ./digital_gate 3
+```
+```
 ./digital_gate 4
 ```
 ![an image](images/digital_gate_3_4.png)
