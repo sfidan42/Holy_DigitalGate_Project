@@ -82,4 +82,17 @@ NOTE: There is no need to actually send the data, the objective is to just const
 ![an image](images/digital_gate_5.png)
 
 ## State Machines
+- Create a simple C function, with the following signature, which every time it is called, returns the next entry in the Fibonacci sequence:
+```unsigned long Next();```
+
+For this, I coded a recursive fibonacci function such
+```
+unsigned long	ft_fib(unsigned long n)
+{
+	if (n < 2)
+		return (n);
+	return (ft_fib(n - 1) + ft_fib(n - 2));
+}
+```
+
 ![an image](images/digital_gate_6.png)
