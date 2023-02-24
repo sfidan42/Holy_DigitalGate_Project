@@ -25,6 +25,7 @@ void	ft_posix_socket(char **av)
 	pthread_create(&thread1, NULL, ft_posix_socket_driver, &ps1);
 	sleep(1);
 	pthread_create(&thread2, NULL, ft_posix_socket_driver, &ps2);
+	sleep(1);
 	pthread_join(thread1, NULL);
 	pthread_join(thread2, NULL);
 }
