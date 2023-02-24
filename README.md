@@ -50,6 +50,8 @@ When Ctrl + c is pressed in the terminal, the number of seconds elapsed shall be
 ![an image](images/digital_gate_2.png)
 
 ## POSIX Socket
+- Write a simple program that: - Listens to incoming UDP packets and prints them along with their originating IP address
+- Explain how you tested your app.
 ```
 ./digital_gate 3
 ```
@@ -60,7 +62,7 @@ When Ctrl + c is pressed in the terminal, the number of seconds elapsed shall be
 
 ## Serialization
 ```
-./digital_gate 5
+./digital_gate 5 12321399213
 ```
 ![an image](images/digital_gate_5.png)
 
