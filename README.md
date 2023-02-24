@@ -94,6 +94,16 @@ unsigned long	ft_fib(unsigned long n)
 	return (ft_fib(n - 1) + ft_fib(n - 2));
 }
 ```
-To let it bring new entry in the sequence, I just used a static index variable ```static int    idx```, so that, each time when I call my function, I increase the idx value and function saves it. 
+To let it bring new entry in the sequence, I just used a static index variable ```static int    idx;```, so that, each time when I call my function, I increase the idx value and function saves it. 
+```
+unsigned long	Next()
+{
+	static int	idx;
 
+	ft_putstr("\033[0;33m");
+	ft_putnbr(idx);
+	ft_putstr(".\033[0m");
+	return (ft_fib(idx++));
+}
+```
 ![an image](images/digital_gate_6.png)
