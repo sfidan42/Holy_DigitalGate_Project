@@ -32,6 +32,11 @@ int	main(void)
 	buffer[n] = '\n';
 	ft_putstr("server: the message -> ");
 	ft_putstr(buffer);
+	ft_putstr(YELLOW);
+	ft_putchar('(');
+	ft_putstr(ip address here!!);
+	ft_putchar(')');
+	ft_putstr(RESET);
 	close(sockfd);
 	return (EXIT_SUCCESS);
 }
