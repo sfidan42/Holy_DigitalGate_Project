@@ -6,6 +6,7 @@
         "cstdlib": "c",
         "system_error": "c",
         "*.tcc": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "functional": "c"
     }
 }

@@ -8,6 +8,7 @@ int	main(void)
 	socklen_t			len;
 	char				buffer[50] = {0};
 	struct sockaddr_in	servaddr = {0};
+	struct sockaddr_in	clientaddr = {0};
 
 	ft_putstr("server is started.\n");
 	ft_putstr("Please type \"./digital_gate 4\" in another terminal.\n");
@@ -27,16 +28,16 @@ int	main(void)
 		close(sockfd);
 		exit(EXIT_FAILURE);
 	}
-	len = 0;
-	n = recvfrom(sockfd, (char *)buffer, 50, MSG_WAITALL, 0, &len);
+	len = sizeof(clientaddr);
+	n = recvfrom(sockfd, (char *)buffer, 50, MSG_WAITALL, (struct sockaddr *)&clientaddr, &len);
 	buffer[n] = '\n';
 	ft_putstr("server: the message -> ");
-	ft_putstr(buffer);
 	ft_putstr(YELLOW);
-	ft_putchar('(');
-	ft_putstr(ip address here!!);
-	ft_putchar(')');
+	ft_putstr("[");
+	ft_putstr(inet_ntoa(clientaddr.sin_addr));
+	ft_putstr("]: ");
 	ft_putstr(RESET);
+	ft_putstr(buffer);
 	close(sockfd);
 	return (EXIT_SUCCESS);
 }
