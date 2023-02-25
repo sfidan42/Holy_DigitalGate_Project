@@ -30,7 +30,7 @@ int	main(int ac, char **av)
 	{
 		ft_putstr(RED);
 		ft_putstr("Error! You should've entered: \n");
-		ft_putstr(GREEN)
+		ft_putstr(GREEN);
 		ft_putstr("<cmd> <program_index> <code> <reason>\n");
 		ft_putstr(PURPLE);
 		ft_putstr("example: ");
