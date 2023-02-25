@@ -87,6 +87,7 @@ void	ft_signal_handler(int signal)
 	ft_putchar('\n');
 }
 ```
+#### run with
 ```
 ./digital_gate 2
 ```
@@ -152,9 +153,11 @@ if (len == -1)
     perror("client: failed to send");
 close(sockfd);
 ```
+#### run with
 ```
 ./digital_gate 3
 ```
+#### run with (inside another terminal)
 ```
 ./digital_gate 4
 ```
@@ -188,7 +191,7 @@ Description was:
 - We need to send this data to another application with UDP sockets.
 - Convert this object to a buffer that can be sent via UDP socket. 
 NOTE: There is no need to actually send the data, the objective is to just construct the buffer so that it can be sent over the network.
-
+#### run with
 ```
 ./digital_gate 5 12345 package_1
 
@@ -219,5 +222,9 @@ unsigned long	Next()
 	ft_putstr(".\033[0m");
 	return (ft_fib(idx++));
 }
+```
+#### run with
+```
+./digital_gate 6 [iteration count]
 ```
 ![an image](images/digital_gate_6.png)
