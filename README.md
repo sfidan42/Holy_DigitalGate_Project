@@ -15,6 +15,8 @@ make clean
 - Depending on the program index value, necessary arguments are different.
 - If no necessity, my codes doesn't allow it.
 
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%" height="3px">
+
 ## POSIX Threading
 
 - Consist of two different threads
@@ -59,6 +61,8 @@ while (1)
 ```
 ![an image](images/digital_gate_1.png)
 
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%" height="3px">
+
 ## POSIX Signals
 
 - Write a simple program that:
@@ -94,6 +98,8 @@ void	ft_signal_handler(int signal)
 ./digital_gate 2
 ```
 ![an image](images/digital_gate_2.png)
+
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%" height="3px">
 
 ## POSIX Socket
 - Write a simple program that: - Listens to incoming UDP packets and prints them along with their originating IP address
@@ -170,6 +176,8 @@ close(sockfd);
 ```
 ![an image](images/digital_gate_3_4.png)
 
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%" height="3px">
+
 ## Serialization
 ```
 typedef struct
@@ -204,6 +212,8 @@ NOTE: There is no need to actually send the data, the objective is to just const
 
 ```
 ![an image](images/digital_gate_5.png)
+
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%" height="3px">
 
 ## State Machines
 - Create a simple C function, with the following signature, which every time it is called, returns the next entry in the Fibonacci sequence:
