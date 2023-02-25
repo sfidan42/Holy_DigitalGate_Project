@@ -37,7 +37,9 @@ int	main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		ft_putstr("\033[31mError! Only 1 argument!\n\033[0m");
+		ft_putstr(RED);
+		ft_putstr("Error! Only 1 argument!\n");
+		ft_putstr(RESET);
 		return (EXIT_FAILURE);
 	}
 	(void)av;
@@ -49,7 +51,9 @@ int	main(int ac, char **av)
 		usleep(5000);
 	pthread_cancel(g_thread1);
 	pthread_cancel(g_thread2);
-	ft_putstr("\033[31mprogram stopped with counter:     \033[0m");
+	ft_putstr(RED);
+	ft_putstr("program stopped with counter:   ");
+	ft_putstr(RESET);
 	ft_putnbr(g_counter - 1);
 	ft_putchar('\n');
 	return (0);

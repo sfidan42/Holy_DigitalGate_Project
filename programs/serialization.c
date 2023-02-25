@@ -28,11 +28,14 @@ int	main(int ac, char **av)
 
 	if (ac != 4)
 	{
-		ft_putstr("\033[31mError! You should've entered: \n\033[32m");
-		ft_putstr("<cmd> <program_index> <code> <reason>\n\033[0m");
-		ft_putstr("\033[35mexample: \033[0m./digital_gate 5 10054 ");
-		ft_putstr("\"An existing connection was forcibly");
-		ft_putstr(" closed by the remote host\"\n");
+		ft_putstr(RED);
+		ft_putstr("Error! You should've entered: \n");
+		ft_putstr(GREEN)
+		ft_putstr("<cmd> <program_index> <code> <reason>\n");
+		ft_putstr(PURPLE);
+		ft_putstr("example: ");
+		ft_putstr(RESET);
+		ft_putstr("./digital_gate 5 10054 \"An existing connection was forcibly closed by the remote host\"\n");
 		return (EXIT_FAILURE);
 	}
 	crash.Code = ft_atoi(av[2]);

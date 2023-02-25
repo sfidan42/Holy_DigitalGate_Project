@@ -6,7 +6,9 @@ int	main(int ac, char **av)
 
 	if (ac == 1)
 	{
-		ft_putstr("\033[31mError! At least 1 arg is required!\n\033[0m");
+		ft_putstr(RED);
+		ft_putstr("Error! At least 1 arg is required!\n");
+		ft_putstr(RESET);
 		return (EXIT_FAILURE);
 	}
 	idx = ft_atoi(av[1]);
@@ -24,7 +26,9 @@ int	main(int ac, char **av)
 		return (execve("programs/state_machines", av, NULL));
 	else
 	{
-		ft_putstr("\033[31mError! Wrong program index!\n\033[0m");
+		ft_putstr(RED);
+		ft_putstr("Error! Wrong program index!\n");
+		ft_putstr(RESET);
 		return (EXIT_FAILURE);
 	}
 	return (EXIT_SUCCESS);
