@@ -82,7 +82,9 @@ With my function for signal handling I just printed the elapsed secons.
 void	ft_signal_handler(int signal)
 {
 	(void)signal;
-	ft_putstr("\n\033[34m# of times elapsed in seconds: \033[0m");
+	ft_putstr(BLUE);
+	ft_putstr("\n# of times elapsed in seconds: ");
+	ft_putstr(RESET);
 	ft_putnbr(g_counter);
 	ft_putchar('\n');
 }
@@ -108,26 +110,31 @@ Server side consists of four steps:
 ```
 ft_putstr("server is started.\n");
 ft_putstr("Please type \"./digital_gate 4\" in another terminal.\n");
-sockfd = socket(AF_INET, SOCK_DGRAM, 0); // creating socket for server side
+sockfd = socket(AF_INET, SOCK_DGRAM, 0);
 if (sockfd == -1)
 {
     perror("server: failed to create socket");
     exit(EXIT_FAILURE);
 }
-servaddr.sin_family = AF_INET; // Setting the address family to IPv4
-servaddr.sin_port = htons(12345); // Destionation Port
-servaddr.sin_addr.s_addr = INADDR_ANY; // Destionation IP Adress (_ANY is for any avaliable)
-rc = bind(sockfd, (const struct sockaddr *)&servaddr, sizeof(servaddr)); // 
+servaddr.sin_family = AF_INET;
+servaddr.sin_port = htons(12345);
+servaddr.sin_addr.s_addr = INADDR_ANY;
+rc = bind(sockfd, (const struct sockaddr *)&servaddr, sizeof(servaddr));
 if (rc == -1)
 {
     perror("server: failed to bind");
     close(sockfd);
     exit(EXIT_FAILURE);
 }
-len = 0;
-n = recvfrom(sockfd, (char *)buffer, 50, MSG_WAITALL, 0, &len); // receiving the signal
+len = sizeof(clientaddr);
+n = recvfrom(sockfd, (char *)buffer, 50, MSG_WAITALL, (struct sockaddr *)&clientaddr, &len);
 buffer[n] = '\n';
 ft_putstr("server: the message -> ");
+ft_putstr(YELLOW);
+ft_putstr("[");
+ft_putstr(inet_ntoa(clientaddr.sin_addr));
+ft_putstr("]: ");
+ft_putstr(RESET);
 ft_putstr(buffer);
 close(sockfd);
 ```
@@ -217,9 +224,10 @@ unsigned long	Next()
 {
 	static int	idx;
 
-	ft_putstr("\033[0;33m");
+	ft_putstr(YELLOW);
 	ft_putnbr(idx);
-	ft_putstr(".\033[0m");
+	ft_putchar('.');
+	ft_putstr(RESET);
 	return (ft_fib(idx++));
 }
 ```
