@@ -5,6 +5,7 @@
 # include <sys/socket.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <readline/readline.h>
 # include "../utils/utils.h"
 
 #endif

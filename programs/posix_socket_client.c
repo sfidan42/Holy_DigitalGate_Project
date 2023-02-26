@@ -1,13 +1,20 @@
 #include "posix_socket.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	int					len;
 	int					sockfd;
 	char				*message;
 	struct sockaddr_in	servaddr = {0};
 
-	message = "hello from client";
+	if (ac != 3)
+	{
+		ft_putstr(RED);
+		ft_putstr("Error! it needs only 2 arguments.\n");
+		ft_putstr(RESET);
+		return (EXIT_FAILURE);
+	}
+	message = av[2];
 	sockfd = socket(AF_INET, SOCK_DGRAM, 0);
 	if (sockfd == -1)
 	{

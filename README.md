@@ -115,7 +115,7 @@ Server side consists of four steps:
 4. Waiting the signal
 ```
 ft_putstr("server is started.\n");
-ft_putstr("Please type \"./digital_gate 4\" in another terminal.\n");
+ft_putstr("Please type \"./digital_gate 4 [message]\" in another terminal.\n");
 sockfd = socket(AF_INET, SOCK_DGRAM, 0);
 if (sockfd == -1)
 {
