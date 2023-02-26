@@ -172,7 +172,7 @@ close(sockfd);
 ```
 #### run with (inside another terminal)
 ```
-./digital_gate 4
+./digital_gate 4 [message]
 ```
 ![an image](images/digital_gate_3_4.png)
 
