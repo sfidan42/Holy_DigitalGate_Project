@@ -1,6 +1,6 @@
 #include "state_machines.h"
 
-unsigned long	ft_fib(unsigned long n)
+unsigned long	ft_fib(int n)
 {
 	if (n < 2)
 		return (n);

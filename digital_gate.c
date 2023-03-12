@@ -1,8 +1,8 @@
 #include "digital_gate.h"
 
-int	main(int ac, char **av)
+int	main(int ac, char **av, char **aw)
 {
-	int		idx;
+	int	idx;
 
 	if (ac == 1)
 	{
@@ -13,7 +13,7 @@ int	main(int ac, char **av)
 	}
 	idx = ft_atoi(av[1]);
 	if (idx == 1)
-		return (execve("programs/posix_threading", av, NULL));
+		return (execve("programs/posix_threading", av, aw));
 	if (idx == 2)
 		return (execve("programs/posix_signals", av, NULL));
 	if (idx == 3)

@@ -3,9 +3,11 @@
 char	*ft_send_buffer(Crash crash)
 {
 	char	*buffer;
-
+	char	*data;
+//byte order: big endian/little endian
+	data = (char *)crash;
 	buffer = malloc(BUFFER_SIZE);
-	ft_memcpy(buffer, &crash, sizeof(crash));
+	ft_memcpy(buffer, &data, sizeof(crash));
 	return (buffer);
 }
 

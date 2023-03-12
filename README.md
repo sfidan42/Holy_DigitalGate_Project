@@ -2,6 +2,8 @@
 
 ![an image](images/digital_gate_tree.png)
 
+![an image](images/digital_gate_bronch.png)
+
 ## Compile the project
 ```
 make

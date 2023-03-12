@@ -24,17 +24,16 @@ void	*ft_second_thread(void *param)
 	while (1)
 	{
 		usleep(100000);
-		pthread_cancel(g_thread1);
 		line = readline("Input \"counter\": ");
 		g_counter = ft_atoi(line);
 		free(line);
-		pthread_create(&g_thread1, NULL, ft_first_thread, NULL);
 	}
 	return (0);
 }
 
 int	main(int ac, char **av)
 {
+	// use mutex to protect g_counter var instead of cancel and create.
 	if (ac != 2)
 	{
 		ft_putstr(RED);
